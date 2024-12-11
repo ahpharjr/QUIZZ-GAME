@@ -17,13 +17,37 @@
 }
 
 /* ====================Card Container=========================== */
-.card-container{
+/* .card-container{
     margin: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 20px;
     row-gap: 20px;
+} */
+.card-container {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+.card-container::-webkit-scrollbar {
+    height: 7px;
+    width: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background-color: #00c0ca; /* Customize the scrollbar thumb color */
+    border-radius: 5px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background-color: #cccccca1; 
+    border-radius: 5px;
 }
 .flashcard {
     height: 28rem;
