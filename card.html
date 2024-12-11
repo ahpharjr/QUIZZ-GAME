@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="icons/quizlogo99.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <title>Card</title>
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <div class="header">
+        <div class="logo-box">
+            <a href="home.html">
+                <img class="logo" src="icons/quizlogo99.svg" alt="Logo">
+            </a>
+            <div class="logo-name">
+                <span class="quiz">QUIZ</span>
+                <span class="game">GAME</span>
+            </div>
+        </div>
+        <div class="profile-box">
+            <span class="pf-lvl">Lvl - 01</span>
+            <div >
+                <img class="profile" id="profile" src="images/space man.jpg" alt="Logo">
+            </div>
+        </div>
+    </div>
+    <div class="profile-container" id="profile-container">
+        <div class="top-box">
+            <div class="top-lf">Profile</div>
+            <div class="top-rg">
+                <img class="speaker-icon" src="icons/speaker.png" alt="Seapker icon">
+                <a href="/update_profile.html">
+                    <img class="edit-icon" src="icons/lucide_edit.png" alt="Edit icon">
+                </a>
+            </div>
+        </div>
+        <div class="bottom-box">
+            <div class="pf-picture"><img src="images/space man.jpg" alt="Profile"></div>
+            <div class="pf-name">
+                Space Man
+                <img src="icons/ship-wheel (1).svg" alt="Badge">
+            </div>
+            <span class="lvl">Level - 01</span>
+            <span class="pf-email">spaceman@gmail.com</span>
+            <!-- <button class="sign-out-btn">Sign out</button> -->
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <a href="/learning_zone.html">
+        <div class="back-arr">
+            <img class="back-arrow" src="icons/back-arrow.png" alt="back"> Back
+        </div>
+    </a>
+    <div class="search-box">
+        <div class="search-input">
+            <input type="text" placeholder="Search card...">
+        </div>
+        <a href="search_card.html">
+            <div class="search-icon">
+                <img src="icons/icons8-search-50 (3).png" alt="search">
+            </div>
+        </a>
+
+    </div>
+    <a href="card_collection.html">
+        <div class="favorite">
+            <span class="tooltip-collection">Card Collection</span>
+            <img class="fav-icon" src="icons/icons8-star-50 (1).png" alt="star">
+        </div>
+    </a>
+    <div class="container">
+        <div class="collection">
+            <div class="flashcard-set-box">
+                <div class="set-title">Project Charter</div>
+                <div class="set-title">Topic 1</div>
+                <div class="set-title">Topic 2</div>
+                <div class="set-title">Topic 3</div>
+                <div class="set-title">Topic 4</div>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Collection</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Collection</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Space Man</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Collection</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Collection</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Collection</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-face front">
+                                <div class="content-pic">
+                                    <img class="pic"src="images/4k-mercedes-red-zcj47yx9mq7tfjed.webp" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="flashcard-face back">
+                                <div class="content-pic">
+                                    <img class="pic" src="images\space man.jpg" alt="image">
+                                    <div class="star">
+                                        <img class="star-icon" src="icons/icons8-star-50 (2).png" alt="star">
+                                        <img class="star-icon-color" src="icons/icons8-star-50 (1).png" alt="star">
+                                        <span class="tooltip">Add to Favorite</span>
+                                    </div>
+                                </div>
+                                <div class="text-content">
+                                  <h3>Soccer</h3>
+                                  <p>
+                                    Learn how to create a dynamic carousel slider
+                                    using Swiper JS in this tutorial! Explore step-by-step
+                                    instructions and code examples to enhance your web development skills.
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+         function flipCard(card) {
+        card.classList.toggle('is-flipped');
+        }
+
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            spaceBetween: 50,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 60,
+                modifier: 3.5,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    </script>
+        <script>
+            const profile = document.getElementById("profile");
+            const profileContainer = document.getElementById("profile-container");
+            const overlay = document.getElementById("overlay");
+            const body = document.body; // Select the body for blurring
+        
+            profile.addEventListener("click", () => {
+                profileContainer.classList.toggle("show");
+                overlay.style.display = profileContainer.classList.contains("show") ? "block" : "none";
+            });
+        
+            // Close profile container and remove blur when clicking outside
+            document.addEventListener("click", (event) => {
+                if (
+                    !profile.contains(event.target) &&
+                    !profileContainer.contains(event.target)
+                ) {
+                    profileContainer.classList.remove("show");
+                    overlay.style.display = "none";
+                }
+            });
+
+            const setTitles = document.querySelectorAll('.set-title');
+
+            setTitles.forEach(title => {
+                title.addEventListener('click', () => {
+
+                    setTitles.forEach(t=> t.classList.remove('selected'));
+
+                    title.classList.add('selected');
+                })
+            })
+        </script>
+</body>
+
+</html>
