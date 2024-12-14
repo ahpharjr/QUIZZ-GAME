@@ -256,7 +256,8 @@
     width: 120px;
     border-radius: 5px;
     border: none;
-    background: linear-gradient(90deg, rgb(16, 98, 118), rgb(18, 203, 187));
+    /* background: linear-gradient(90deg, rgb(16, 98, 118), rgb(18, 203, 187)); */
+    background: rgb(5, 55, 55);
     color: white;
     border: 1px solid white;
     font-weight: 600;
@@ -282,7 +283,7 @@
 }
 
 .btn:hover {
-    color: #1efefe;
+    color: #fff;
     box-shadow: 0 0 10px rgb(19, 229, 212), 0 0 10px rgba(0, 255, 234, 0.8);
 }
 

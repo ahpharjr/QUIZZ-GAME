@@ -28,8 +28,10 @@
     </div>
     <div class="header hidden">
             <div class="logo-box">
-                <img class="logo" src="icons/quizlogo99.svg" alt="Logo">
-                <div class="logo-name">
+                <a href="home.html">
+                    <img class="logo" src="icons/quizlogo99.svg" alt="Logo">
+                </a>
+                    <div class="logo-name">
                     <span class="quiz">QUIZ</span>
                     <span class="game">GAME</span>
                 </div>
@@ -50,11 +52,18 @@
                 <span id="timer">00:45</span>
             </div>
             <a href="game_set.html">
-                <div class="exist">
+                <div id="exit-link" class="exist">
                     <img src="icons/exit-door.svg" alt="exist icon">
                     <span>Exist</span>
                 </div>
             </a>
+            <div id="confirmation-overlay" class="hidden">
+                <div class="overlay-box">
+                    <p>Are you sure you want to exit?</p>
+                    <button id="confirm-exit">Yes</button>
+                    <button id="cancel-exit">No</button>
+                </div>
+            </div>
             <div class="remain-question"> 1 / 8</div>
             <div class="question-box">
                 <div class="Q-img">
@@ -83,9 +92,9 @@
                     <span class="ans-text">Collaborative approach with stakeholders</span>
                 </div>
             </div>
-            <button class="next-btn">NEXT</button>
+            <button id="finish-btn" class="next-btn">NEXT</button>
         </div>
-    </div>
+    <!-- </div>
 
     <script>
         function selectAnswer(selectedElement) {
@@ -102,7 +111,7 @@
 
     <script>
 
-        let timeLeft = 48; // Time in seconds
+        /* let timeLeft = 48; // Time in seconds
         const timerElement = document.getElementById("timer");
 
         function updateTimer() {
@@ -118,7 +127,26 @@
             }
         }
 
-        const timerInterval = setInterval(updateTimer, 1000);
+        const timerInterval = setInterval(updateTimer, 1000); */ 
+
+            let elapsedTime = -3; 
+            const timerElement = document.getElementById("timer");
+
+            function updateTimer() {
+                const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '0');
+                const seconds = String(elapsedTime % 60).padStart(2, '0');
+                timerElement.textContent = `${minutes}:${seconds}`;
+                elapsedTime++;
+            }
+            const timerInterval = setInterval(updateTimer, 1000);
+            function stopTimer() {
+                clearInterval(timerInterval);
+                console.log(`Quiz completed in ${Math.floor(elapsedTime / 60)} minutes and ${elapsedTime % 60} seconds.`);
+
+            }
+
+            document.getElementById("finish-btn").addEventListener("click", stopTimer);        
+
     </script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
@@ -133,7 +161,6 @@
             onComplete: () => {
                 document.querySelector(".loading").style.display = "none";
 
-                // Show the main content
                 document.querySelector(".header").classList.remove("hidden");
                 document.querySelector(".header").classList.add("visible");
                 document.querySelector(".container").classList.remove("hidden");
@@ -142,7 +169,113 @@
         });
     });
 
+    const exitLink = document.getElementById("exit-link");
+    const confirmationOverlay = document.getElementById("confirmation-overlay");
+    const confirmExitButton = document.getElementById("confirm-exit");
+    const cancelExitButton = document.getElementById("cancel-exit");
+    
+    exitLink.addEventListener("click", (event) => {
+            event.preventDefault(); 
+            confirmationOverlay.classList.remove("hidden");
+        });
+    
+        confirmExitButton.addEventListener("click", () => {
+            window.location.href = "game_set.html";
+        });
+    
+        cancelExitButton.addEventListener("click", () => {
+            confirmationOverlay.classList.add("hidden");
+        });    
 
+</script> -->
+
+<script>
+    function selectAnswer(selectedElement) {
+        // Remove 'selected' class from all answers
+        const allAnswers = document.querySelectorAll('.answer');
+        allAnswers.forEach(answer => {
+            answer.classList.remove('selected');
+        });
+
+        // Add 'selected' class to the clicked answer
+        selectedElement.classList.add('selected');
+    }
 </script>
+
+<script>
+    let elapsedTime = 0; // Start time from 0
+    let timerInterval = null;
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+        const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '0');
+        const seconds = String(elapsedTime % 60).padStart(2, '0');
+        timerElement.textContent = `${minutes}:${seconds}`;
+        elapsedTime++;
+    }
+
+    function startTimer() {
+        if (!timerInterval) {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        console.log(`Quiz completed in ${Math.floor(elapsedTime / 60)} minutes and ${elapsedTime % 60} seconds.`);
+    }
+
+    // Start the timer when the page loads
+    startTimer();
+
+    document.getElementById("finish-btn").addEventListener("click", stopTimer);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.to(".loading", {
+            opacity: 0,
+            duration: 0.1,
+            delay: 3.8,
+            onComplete: () => {
+                document.querySelector(".loading").style.display = "none";
+
+                document.querySelector(".header").classList.remove("hidden");
+                document.querySelector(".header").classList.add("visible");
+                document.querySelector(".container").classList.remove("hidden");
+                document.querySelector(".container").classList.add("visible");
+            }
+        });
+    });
+
+    const exitLink = document.getElementById("exit-link");
+    const confirmationOverlay = document.getElementById("confirmation-overlay");
+    const confirmExitButton = document.getElementById("confirm-exit");
+    const cancelExitButton = document.getElementById("cancel-exit");
+
+    exitLink.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        confirmationOverlay.classList.remove("hidden");
+        pauseTimer(); // Pause the timer when the exit overlay is shown
+    });
+
+    confirmExitButton.addEventListener("click", () => {
+        window.location.href = "game_set.html";
+    });
+
+    cancelExitButton.addEventListener("click", () => {
+        confirmationOverlay.classList.add("hidden");
+        startTimer(); // Resume the timer if the user cancels the exit
+    });
+</script>
+
 </body>
 </html>
