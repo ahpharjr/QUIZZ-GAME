@@ -94,8 +94,8 @@
             </div>
             <button id="finish-btn" class="next-btn">NEXT</button>
         </div>
-    <!-- </div>
-
+ </div>
+<!--
     <script>
         function selectAnswer(selectedElement) {
             // Remove 'selected' class from all answers
@@ -191,19 +191,17 @@
 
 <script>
     function selectAnswer(selectedElement) {
-        // Remove 'selected' class from all answers
         const allAnswers = document.querySelectorAll('.answer');
         allAnswers.forEach(answer => {
             answer.classList.remove('selected');
         });
 
-        // Add 'selected' class to the clicked answer
         selectedElement.classList.add('selected');
     }
 </script>
 
 <script>
-    let elapsedTime = 0; // Start time from 0
+    let elapsedTime = -3; 
     let timerInterval = null;
     const timerElement = document.getElementById("timer");
 
@@ -230,7 +228,6 @@
         console.log(`Quiz completed in ${Math.floor(elapsedTime / 60)} minutes and ${elapsedTime % 60} seconds.`);
     }
 
-    // Start the timer when the page loads
     startTimer();
 
     document.getElementById("finish-btn").addEventListener("click", stopTimer);
@@ -239,12 +236,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-    // Wait for the DOM to load
     document.addEventListener("DOMContentLoaded", () => {
         gsap.to(".loading", {
             opacity: 0,
-            duration: 0.1,
-            delay: 3.8,
+            duration: 0.2,
+            delay: 2.5,
             onComplete: () => {
                 document.querySelector(".loading").style.display = "none";
 
@@ -264,7 +260,7 @@
     exitLink.addEventListener("click", (event) => {
         event.preventDefault(); 
         confirmationOverlay.classList.remove("hidden");
-        pauseTimer(); // Pause the timer when the exit overlay is shown
+        pauseTimer();
     });
 
     confirmExitButton.addEventListener("click", () => {
@@ -273,7 +269,7 @@
 
     cancelExitButton.addEventListener("click", () => {
         confirmationOverlay.classList.add("hidden");
-        startTimer(); // Resume the timer if the user cancels the exit
+        startTimer(); 
     });
 </script>
 
