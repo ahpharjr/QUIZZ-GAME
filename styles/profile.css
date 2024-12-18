@@ -5,14 +5,16 @@
     height: 260px;
     padding: 25px;
     border-radius: 10px;
-
+    color: aliceblue;
     position: absolute;
     top: 65px;
     right: 20px;
     display: none;
     z-index: 101;
     /* background: linear-gradient(to right, rgb(65, 125, 151), rgb(88, 154, 176), rgb(32, 95, 122)); */
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: #142d24cb;
+    backdrop-filter: blur(7px);
     border: 2px solid white;
     /* box-shadow: 0px 2px 5px rgb(254, 255, 239), 0px 2px 5px rgb(235, 235, 231); */
 }
@@ -40,7 +42,7 @@
 .edit-icon{
     width: 21px;
 }
-/* ================Bottom box============= */
+
 .bottom-box{
     display: flex;
     flex-direction: column;
@@ -67,7 +69,7 @@
 }
 .lvl{
     font-size: 0.7rem;
-    color: rgb(112, 112, 112);
+    /* color: rgb(112, 112, 112); */
     margin-top: 5px;
 }
 .pf-email{
@@ -75,7 +77,7 @@
     margin-top: 4px;
 }
 .sign-out-btn{
-    margin-top: 20px;
+    margin-top: 10px;
     border: none;
     background-color: rgba(14, 138, 169, 1);
     padding: 8px 24px;

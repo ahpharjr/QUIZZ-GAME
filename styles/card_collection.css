@@ -41,7 +41,7 @@
 }
 
 .card-container::-webkit-scrollbar-thumb {
-    background-color: #00c0ca; /* Customize the scrollbar thumb color */
+    background-color: #00c0ca;
     border-radius: 5px;
 }
 
@@ -51,8 +51,8 @@
 }
 .flashcard {
     height: 28rem;
-    width: 21rem;
-    background: radial-gradient(circle, rgb(29, 100, 99) 0%, rgb(81, 104, 131) 90%);
+    width: 20rem;
+    background: radial-gradient(circle, rgb(24, 78, 77) 30%, transparent);
     border: .1rem solid rgb(255, 255, 255);
     border-radius: .7rem;
     position: relative;
@@ -64,6 +64,9 @@
 .flashcard.is-flipped {
     transform: rotateY(180deg); 
     border-radius: .7rem;
+}
+.title{
+    color: #fff;
 }
 
 .flashcard-face {

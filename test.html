@@ -1,0 +1,92 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  
+    .leaderboard {
+    max-width: 400px;
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .leader {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .position {
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .winner {
+    background: linear-gradient(90deg, #f9d423, #ff4e50);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    animation: glow 1.5s infinite;
+  }
+  
+  /* Fire animation for winner */
+  .fire-animation {
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url('fire-icon.png') no-repeat center;
+    background-size: contain;
+    animation: flicker 0.8s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #ff4e50, 0 0 10px #f9d423;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff4e50, 0 0 30px #f9d423;
+    }
+  }
+  
+    </style>
+  </head>
+  <body>
+    <div class="leaderboard">
+        <div class="leader">
+          <div class="position winner">
+            <span class="fire-animation"></span>
+            🏆 Winner: Jane Doe - 1500 pts
+          </div>
+        </div>
+        <div class="leader">
+          <div class="position">2. John Smith - 1400 pts</div>
+        </div>
+        <div class="leader">
+          <div class="position">3. Mary Johnson - 1300 pts</div>
+        </div>
+        <!-- Add other leaderboard users -->
+      </div>
+  
+    </body>
+  </html>
