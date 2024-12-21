@@ -16,12 +16,12 @@ function startOnboarding() {
             {
                 element: document.querySelector('.info-container'),
                 title: "Your Mission 🌟",
-                intro: "Become a knowledge explorer! Earn EXP points through quizzes and flashcards to level up, unlock new challenges, and reap exciting rewards!"
+                intro: "Become a knowledge explorer! Earn XP points through quizzes and flashcards to level up and reap exciting rewards!"
             },
             {
                 element: document.querySelector('.profile-info-box'),
                 title: "To Level Up",
-                intro: "Earn Experience Points (EXP) by completing activities.<br> Once you reach the required EXP, you’ll level up and unlock new challenges.",
+                intro: "Earn Experience Points (XP) by completing activities.<br> Once you reach the required XP, you’ll level up and unlock new challenges.",
                 position: 'right'
             },
             {
