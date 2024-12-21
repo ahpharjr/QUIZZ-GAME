@@ -1,7 +1,9 @@
 function startOnboarding() {
-    introJs().setOptions({
+    const intro = introJs();
+
+    intro.setOptions({
         nextLabel: 'Next ',
-        prevLabel: ' Back',
+        prevLabel: 'Back',
         doneLabel: 'Finish',
         skipLabel: 'Skip',
         tooltipClass: 'custom-tooltip',
@@ -9,7 +11,7 @@ function startOnboarding() {
         steps: [
             {
                 title: "Welcome to Quiz Game! 🚀",
-                intro: "Ready to embark on an exciting journey of knowledge and achievement? Here’s your ultimate guide to getting started"
+                intro: "Ready to embark on an exciting journey of knowledge and achievement? Here’s your ultimate guide to getting started."
             },
             {
                 element: document.querySelector('.info-container'),
@@ -17,7 +19,7 @@ function startOnboarding() {
                 intro: "Become a knowledge explorer! Earn EXP points through quizzes and flashcards to level up, unlock new challenges, and reap exciting rewards!"
             },
             {
-                element: document.querySelector('.profile-info-box2'),
+                element: document.querySelector('.profile-info-box'),
                 title: "To Level Up",
                 intro: "Earn Experience Points (EXP) by completing activities.<br> Once you reach the required EXP, you’ll level up and unlock new challenges.",
                 position: 'right'
@@ -38,17 +40,24 @@ function startOnboarding() {
                 intro: "Put your brainpower to the test with fun, fast-paced quizzes. Climb the leaderboard, improve your score, and show the world your expertise!"
             }
         ]
-    }).start();
+    });
+
+    intro.oncomplete(function () {
+        // Set onboarding complete flag in localStorage
+        localStorage.setItem('onboardingCompleted', 'true');
+    });
+
+    intro.onexit(function () {
+        // Ensure the flag is set if the user exits the tour early
+        localStorage.setItem('onboardingCompleted', 'true');
+    });
+
+    intro.start();
 }
 
 // Automatically trigger onboarding for new users
 window.onload = function () {
     if (!localStorage.getItem('onboardingCompleted')) {
         startOnboarding();
-        introJs().oncomplete(function () {
-            localStorage.setItem('onboardingCompleted', true);
-        });
     }
 };
-
-console.log('hello')
