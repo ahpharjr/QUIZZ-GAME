@@ -63,7 +63,7 @@
         <div class="phase-div swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="/card.html">
+                    <a href="/card.html" id="phase-link">
                         <div class="phase-1">
                             <div class="pic-box">
                                 <img src="images/space man.jpg" alt="spaceman">
@@ -78,7 +78,7 @@
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="/card.html">
+                    <a href="/card.html" id="phase-link">
                         <div class="phase-1">
                             <div class="pic-box">
                                 <img src="images/space man.jpg" alt="spaceman">
@@ -93,7 +93,7 @@
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="/card.html">
+                    <a href="/card.html" id="phase-link">
                         <div class="phase-1">
                             <div class="pic-box">
                                 <img src="images/space man.jpg" alt="spaceman">
@@ -108,7 +108,7 @@
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="/card.html">
+                    <a href="/card.html" id="phase-link">
                         <div class="phase-1">
                             <div class="pic-box">
                                 <img src="images/space man.jpg" alt="spaceman">
@@ -196,6 +196,23 @@
                 profileContainer.classList.remove("show");
                 overlay.style.display = "none";
             }
+        });
+    </script>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "./audio/click.mp3";
+        audio.playbackRate = 3;
+
+        const phaseLink = document.getElementById("phase-link");
+        phaseLink.addEventListener("click", function (event) {
+            event.preventDefault(); 
+            audio.play(); 
+
+
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "/card.html";
+            }, 300);
         });
     </script>
 </body>

@@ -112,7 +112,7 @@
               Space Man
               <img src="/images/Level-2.png" alt="Badge">
           </div>
-          <span class="lvl">Level - 02</span>
+          <span class="lvl">Level - 01</span>
           <span class="pf-email">spaceman@gmail.com</span>
           <button class="sign-out-btn">Sign out</button>
       </div>
@@ -290,15 +290,18 @@
             <img class="game-img" src="icons/learning-zone-img.png" alt="Learning zone">
             <span class="game-name">Learning Zone</span>
             <span class="desc-text">Expend you knowledge and understanding with<br>practicing with flashcards</span>
-            <a href="/learning_zone.html"><button class="btn">Learn</button></a>
+            <a href="/learning_zone.html" id="learn-link">
+                <button class="btn" onclick="audio.play();">Learn</button>
+            </a>
         </div>
         <div class="game-zone-box">
             <img  class="game-img" src="icons/game-zone-img.png" alt="Learning zone">
             <span class="game-name">Gaming Zone</span>
             <span class="desc-text">Expend you knowledge and understanding with <br>practicing with flashcards</span>
-            <a href="game_zone.html">
-                <button class="btn">Play</button>
+            <a href="game_zone.html" id="play-link">
+                <button class="btn" onclick="audio.play();">Play</button>
             </a>
+
         </div>
     </div>
     <button class="onboarding-btn" onclick="startOnboarding()">
@@ -306,6 +309,39 @@
     </button>
 </div>
 
+<!-- Audio for Click a button -->
+    <script type="text/javascript">
+
+    const audio = new Audio();
+    audio.src = "./audio/click.mp3";
+    audio.playbackRate = 3;
+
+    const playLink = document.getElementById("play-link");
+    playLink.addEventListener("click",function(event){
+        event.preventDefault();
+        audio.play();
+        
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+            window.location.href = "game_zone.html";
+        }, 300);
+
+    });
+
+    const learnLink = document.getElementById("learn-link");
+    learnLink.addEventListener("click",function(event){
+        event.preventDefault();
+        audio.play();
+        
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+            window.location.href = "learning_zone.html";
+        }, 300);
+
+    });
+
+
+  </script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
